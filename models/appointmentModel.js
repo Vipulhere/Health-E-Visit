@@ -1,4 +1,7 @@
+// Import the mongoose module
 const mongoose = require("mongoose");
+
+// Define the appointment schema using mongoose.Schema
 const appointmentSchema = new mongoose.Schema(
   {
     userId: {
@@ -32,9 +35,12 @@ const appointmentSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true,
+    timestamps: true, // Automatically add createdAt and updatedAt fields
   }
 );
 
+// Create a model based on the appointment schema
 const appointmentModel = mongoose.model("appointments", appointmentSchema);
+
+// Export the appointment model
 module.exports = appointmentModel;

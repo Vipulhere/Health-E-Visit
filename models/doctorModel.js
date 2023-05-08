@@ -1,4 +1,7 @@
+// Import the mongoose module
 const mongoose = require("mongoose");
+
+// Define the doctor schema using mongoose.Schema
 const doctorSchema = new mongoose.Schema(
   {
     userId: {
@@ -33,23 +36,26 @@ const doctorSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    feePerCunsultation: {
+    feePerConsultation: {
       type: Number,
       required: true,
     },
-    timings : {
+    timings: {
       type: Array,
       required: true,
     },
     status: {
       type: String,
       default: "pending",
-    }
+    },
   },
   {
-    timestamps: true,
+    timestamps: true, // Automatically add createdAt and updatedAt fields
   }
 );
 
+// Create a model based on the doctor schema
 const doctorModel = mongoose.model("doctors", doctorSchema);
+
+// Export the doctor model
 module.exports = doctorModel;

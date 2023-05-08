@@ -1,5 +1,7 @@
+// Import the mongoose module
 const mongoose = require("mongoose");
 
+// Define the user schema using mongoose.Schema
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -32,10 +34,12 @@ const userSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true,
+    timestamps: true, // Automatically add createdAt and updatedAt fields
   }
 );
 
+// Create a model based on the user schema
 const userModel = mongoose.model("users", userSchema);
 
+// Export the user model
 module.exports = userModel;
