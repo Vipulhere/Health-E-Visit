@@ -15,7 +15,7 @@ const userRoute = require("./routes/userRoute");
 const adminRoute = require("./routes/adminRoute");
 const doctorRoute = require("./routes/doctorsRoute");
 
-// const path = require('path');
+const path = require('path');
 
 // Use the routes
 app.use("/api/user", userRoute);
