@@ -1,7 +1,7 @@
 // Import the necessary modules
 const express = require("express");
 const app = express();
-
+const cors = require("cors");
 require("dotenv").config();
 
 // Import the database configuration
@@ -16,7 +16,8 @@ const adminRoute = require("./routes/adminRoute");
 const doctorRoute = require("./routes/doctorsRoute");
 
 const path = require('path');
-
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
 // Use the routes
 app.use("/api/user", userRoute);
 app.use("/api/admin", adminRoute);

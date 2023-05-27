@@ -14,7 +14,7 @@ function DoctorAppointments() {
     try {
       dispatch(showLoading());
       const resposne = await axios.get(
-        "/api/doctor/get-appointments-by-doctor-id",
+        "https://health-e-visit.onrender.com/api/doctor/get-appointments-by-doctor-id",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -34,7 +34,7 @@ function DoctorAppointments() {
     try {
       dispatch(showLoading());
       const resposne = await axios.post(
-        "/api/doctor/change-appointment-status",
+        "https://health-e-visit.onrender.com/api/doctor/change-appointment-status",
         { appointmentId : record._id, status: status },
         {
           headers: {

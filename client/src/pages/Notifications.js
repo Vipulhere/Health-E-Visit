@@ -15,7 +15,7 @@ function Notifications() {
   const markAllAsSeen=async()=>{
     try {
         dispatch(showLoading());
-        const response = await axios.post("/api/user/mark-all-notifications-as-seen", {userId : user._id} , {
+        const response = await axios.post("https://health-e-visit.onrender.com/api/user/mark-all-notifications-as-seen", {userId : user._id} , {
             headers: {
                 Authorization : `Bearer ${localStorage.getItem("token")}`
             }
@@ -36,7 +36,7 @@ function Notifications() {
   const deleteAll=async()=>{
     try {
         dispatch(showLoading());
-        const response = await axios.post("/api/user/delete-all-notifications", {userId : user._id} , {
+        const response = await axios.post("https://health-e-visit.onrender.com/api/user/delete-all-notifications", {userId : user._id} , {
             headers: {
                 Authorization : `Bearer ${localStorage.getItem("token")}`
             }
